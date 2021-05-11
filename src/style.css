@@ -1,0 +1,14 @@
+.weather-app {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid #ffffff00;
+}
+h1 {
+  color: black;
+  display: block;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  line-height: 19px;
+  text-align: left;
+}
