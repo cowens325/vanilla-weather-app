@@ -1,19 +1,16 @@
 body {
   font-family: arial, sans-serif;
 }
-
 h1 {
   color: black;
   font-weight: bold;
   line-height: 19px;
   font-size: 30px;
 }
-
 ul {
   margin: 0px;
   padding: 0px;
 }
-
 li {
   font-size: 18px;
   font-weight: bold;
@@ -31,25 +28,22 @@ li {
   max-width: 600px;
   margin: 20px auto;
   padding: 15px;
-  border: 1px solid #ffffff00;
+  border: 1px solid #ffff00;
   border-radius: 5px;
 }
-
 .overview {
   margin-bottom: 20px;
 }
-
 .weather-temperature img {
   margin-left: 10px;
 }
-
 .temperature {
   color: violet;
-  font-weight: 350px;
-  line-height: 1px;
+  font-size: 35px;
+  line-height: 1;
 }
 .units {
   position: relative;
   font-size: 16px;
-  top: -28px;
+  top: -13px;
 }
