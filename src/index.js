@@ -37,10 +37,20 @@ function displayTemperature(response) {
     iconElement.setAttribute("alt" , response.data.weather[0].description);
 }
 
+function search(city) {
+    let apiKey =  "1e1608b187f39199c366f0fe75766dde"
+    let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayTemperature);
+} 
 
 
-let apiKey =  "1e1608b187f39199c366f0fe75766dde"
-let city = "New York";
-let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+search("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit" , handleSubmit);
