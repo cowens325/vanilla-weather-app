@@ -54,3 +54,11 @@ li {
   top: -13px;
   color: white;
 }
+.weather-temperature .active {
+  color: white;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
