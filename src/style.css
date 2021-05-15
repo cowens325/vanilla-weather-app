@@ -1,9 +1,12 @@
 body {
-  background-image: url(https://i.pinimg.com/originals/1e/19/d5/1e19d52012fd735aa374de440f81b183.jpg);
+  background-image: url(https://scx1.b-cdn.net/csz/news/800a/2015/theresplende.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: arial, sans-serif;
+  color: white;
 }
 h1 {
-  color: black;
+  color: white;
   font-weight: bold;
   line-height: 19px;
   font-size: 30px;
@@ -18,7 +21,7 @@ li {
   font-weight: bold;
   list-style: none;
   line-height: 19px;
-  color: black;
+  color: white;
   margin: 0px;
   padding: 0px;
   text-transform: capitalize;
@@ -31,7 +34,7 @@ li {
   max-width: 600px;
   margin: 20px auto;
   padding: 15px;
-  border: 1px solid #ffff00;
+  border: 1px solid white;
   border-radius: 5px;
 }
 .overview {
@@ -41,12 +44,13 @@ li {
   margin-left: 10px;
 }
 .temperature {
-  color: violet;
-  font-size: 35px;
+  color: white;
+  font-size: 45px;
   line-height: 1;
 }
 .units {
   position: relative;
-  font-size: 16px;
+  font-size: 12px;
   top: -13px;
+  color: white;
 }
