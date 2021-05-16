@@ -55,20 +55,17 @@ function handleSubmit(event) {
 }
 
 function displayCelsiusTemperature(event) {
-    event.preventDefault();
-    let celsiusTemperature = (fahrenheitTemperature  − 32) * 5 / 9;
-    alert(celsiusTemperature);
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  event.preventDefault();
+  let celsiusTemperature = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
 function displayFahrenheitTemperature(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrenheitTTemperature);
-
-let fahrenheitLink = null;
-
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+let fahrenheitTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit" , handleSubmit);
