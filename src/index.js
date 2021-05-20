@@ -19,7 +19,7 @@ function displayForecast() {
 
     let forecastHTML = `<div class="row">`;
     let days = ["Thu", "Fri", "Sat", "Sun"];
-    daysforEach(function(day) {
+    days.forEach(function(day) {
          forecastHTML = forecastHTML + `
          <div class="col-2">
                             <div class="weather-forcast-date">${day}</div>
