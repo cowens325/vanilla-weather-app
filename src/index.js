@@ -1,70 +1,47 @@
-function formatDate(timestamp) {
-    let date = new Date(timestamp);
-    let hours = date.getHours();
-    if (hours < 10) {
-        hours = `0${hours}`;
-    }
-    let minutes = date.getMinutes();
-    if (minutes <10) {
-        minutes = `0${minutes}`;
-    }
-
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[date.getDay()];
-    return `${day} ${hours}: ${minutes}`;
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  return days[day];
 }
-
-function formatDay(timeStamp){
-    let date = new Date (imeStamp * 1000);
-    let day = date.getDay();
-    let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-
-    return days[day];
-}
-
 function displayForecast(response) {
-    let forecast = response.data.daily;
-
-    let forecastElement = document.querySelector("#forecast");
-
-    let forecastHTML = `<div class="row">`;
-    let days = ["Thu", "Fri", "Sat", "Sun"];
-    forecast.forEach(function(forecastDay, index) {
-        if (index < 6) {
-
-        }
-         forecastHTML = forecastHTML + `
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+    }
+    forecastHTML =
+      forecastHTML +
+      `
          <div class="col-2">
-                            <div class="weather-forcast-date">${formatDay(forecastDay.dt)}</div>
-                          
-                           
-                            <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=""
+                            <div class="weather-forcast-date">${formatDay(
+                              forecastDay.dt
+                            )}</div>
+                            <img src="http://openweathermap.org/img/wn/${
+                              forecastDay.weather[0].icon
+                            }@2x.png" alt=""
                             width="42"
                             />
                             <div class="weather-forecast-temperature">
-                           <span class="weather-forecast-temperature-max" > ${Math.round(forecastDay.temp.max)}°</span>
+                           <span class="weather-forecast-temperature-max" > ${Math.round(
+                             forecastDay.temp.max
+                           )}°</span>
                         <span class="weather-forecast-temperature-min">
                          ${Math.round(forecastDay.temp.min)}° </span>
-
                          </div>
                     </div>
-             
                 `;
-        }
-
-    })
-   
-   
-                       
-        forecastHTML = forecastHTML + `</div>`;
-        forecastElement.innerHTML = forecastHTML;
-
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-    function getForecast(coordinates)   {
-         let apiKey =  "1e1608b187f39199c366f0fe75766dde";
-        let apiUrl = `https:https://api.openweathermap.org/data/2.5/onecall?lat={lat}=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(displayForecast);
-    }
+function getForecast(coordinates) {
+  let apiKey = "1e1608b187f39199c366f0fe75766dde";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayTemperature(response) {
 
